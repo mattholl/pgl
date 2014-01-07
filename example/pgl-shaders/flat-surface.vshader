@@ -26,12 +26,19 @@ uniform vec3 uLightDiffuse;
 uniform bool uWireframe;
 uniform bool uPerVertexColor;
 
+uniform bool uPointMesh;
+uniform float uPointSize;
+
+
 // Pass through to the fragment shader
 varying vec4 vColor;
 
 void main() {
     if(uWireframe) {
         vColor = vec4(aDiffuse, 1.0);
+    } else if(uPointMesh) {
+        vColor = vec4(aDiffuse, 1.0);
+        gl_PointSize = uPointSize;
     } else {
         // Create color
         vColor = vec4(0.0);
@@ -62,8 +69,4 @@ void main() {
     }
     // Set position
     gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
-    // gl_Position = uPMatrix * uMMatrix * uVMatrix * vec4(aVertexPosition, 1.0);
-    // gl_Position = uPMatrix * uvMatrix * umMatrix * vec4(aVertexPosition, 1.0);
-
-
 }
