@@ -1,12 +1,15 @@
 {
   "name": "pgl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A node module to provide a mesh drawing libray for use with the Plask programming environment for OSX.",
-  "keywords" : [ "Plask", "webgl" ],
+  "keywords": [
+    "Plask",
+    "webgl"
+  ],
   "main": "index.js",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/mattholl/pgl.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattholl/pgl.git"
   },
   "author": "Matt Hollings <matthew.hollings@gamil.com>",
   "license": "BSD-2-Clause"
