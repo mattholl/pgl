@@ -22,7 +22,7 @@ plask.simpleWindow({
             gl : gl,
             width : this.width,
             height : this.height,
-            shaderPath : __dirname + '/pgl-shaders',
+            shaderPath : __dirname + '/shaders',
             shaderName : 'flat-surface'
         });
 
