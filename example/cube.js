@@ -16,6 +16,7 @@ plask.simpleWindow({
         this.framerate(60);
 
         var gl = this.gl;
+        var self = this;
 
         pgl.renderer.create({
             gl : gl,
@@ -93,20 +94,12 @@ plask.simpleWindow({
             });
         }, 1000);
 
-        this.on('leftMouseDown', function(e) {
-            pgl.scene.handleMouse(e);
-        });
+        var mouseEvents = ['leftMouseDown', 'leftMouseUp', 'leftMouseDragged', 'scrollWheel'];
 
-        this.on('leftMouseUp', function(e) {
-            pgl.scene.handleMouse(e);
-        });
-
-        this.on('leftMouseDragged', function(e) {
-            pgl.scene.handleMouse(e);
-        });
-
-        this.on('scrollWheel', function(e) {
-            pgl.scene.handleMouse(e);
+        mouseEvents.forEach(function(mouseEvent) {
+            self.on(mouseEvent, function(e) {
+                pgl.scene.handleMouse(e);
+            });
         });
 
         this.on('keyUp', function(e) {
