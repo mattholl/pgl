@@ -46,8 +46,8 @@ plask.simpleWindow({
 
         pgl.scene.addMesh( cube );
 
-
-        // pgl.scene.addFloor();
+        ///////////
+        pgl.scene.addFloor();
 
         var floor = new pgl.mesh({
             geometry : new pgl.geom.planeGrid(),
