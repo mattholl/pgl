@@ -46,6 +46,9 @@ plask.simpleWindow({
 
         pgl.scene.addMesh( cube );
 
+
+        // pgl.scene.addFloor();
+
         var floor = new pgl.mesh({
             geometry : new pgl.geom.planeGrid(),
             scene : pgl.scene,
@@ -66,23 +69,23 @@ plask.simpleWindow({
 
         pgl.scene.addMesh( axes );
 
-        var points = new pgl.mesh({
-            geometry : new pgl.geom.points(),
-            scene : pgl.scene,
-            name : 'points',
-            position : new plask.Vec3(0, 0, 0),
-            pointMesh : true,
-            pointSize : 3
-        });
+        // var points = new pgl.mesh({
+        //     geometry : new pgl.geom.points(),
+        //     scene : pgl.scene,
+        //     name : 'points',
+        //     position : new plask.Vec3(0, 0, 0),
+        //     pointMesh : true,
+        //     pointSize : 3
+        // });
 
-        points.addPoint({
-            position : new plask.Vec3(1, 2.0, 1),
-            material : {
-                diffuse : new plask.Vec3(1.0, 0.0, 0.0)
-            }
-        });
+        // points.addPoint({
+        //     position : new plask.Vec3(1, 2.0, 1),
+        //     material : {
+        //         diffuse : new plask.Vec3(1.0, 0.0, 0.0)
+        //     }
+        // });
 
-        pgl.scene.addMesh( points );
+        // pgl.scene.addMesh( points );
 
         setTimeout(function() {
             cube.addTriangle({
