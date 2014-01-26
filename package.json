@@ -1,6 +1,6 @@
 {
   "name": "pgl",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A node module to provide a mesh drawing libray for use with the Plask programming environment for OSX.",
   "keywords": [
     "Plask",
