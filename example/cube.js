@@ -48,23 +48,22 @@ plask.simpleWindow({
         pgl.scene.addFloor();
         pgl.scene.addAxes();
 
-        // var points = new pgl.mesh({
-        //     geometry : new pgl.geom.points(),
-        //     scene : pgl.scene,
-        //     name : 'points',
-        //     position : new plask.Vec3(0, 0, 0),
-        //     pointMesh : true,
-        //     pointSize : 3
-        // });
+        var points = new pgl.mesh({
+            geometry : new pgl.geom.points(),
+            scene : pgl.scene,
+            name : 'points',
+            position : new plask.Vec3(0, 0, 0),
+            pointSize : 3.0
+        });
 
-        // points.addPoint({
-        //     position : new plask.Vec3(1, 2.0, 1),
-        //     material : {
-        //         diffuse : new plask.Vec3(1.0, 0.0, 0.0)
-        //     }
-        // });
+        points.addPoint({
+            position : new plask.Vec3(1, 2.0, 1),
+            material : {
+                diffuse : new plask.Vec3(1.0, 0.0, 0.0)
+            }
+        });
 
-        // pgl.scene.addMesh( points );
+        pgl.scene.addMesh( points );
 
         setTimeout(function() {
             cube.addTriangle({
