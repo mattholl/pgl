@@ -14,10 +14,12 @@ var geom = require('./lib/geom');
 // on the scene to emit updates without direct binding.
 var scene = require('./lib/scene');
 var sceneGraph = new scene();
+var pglUtils = require('./lib/pgl-utils');
 
 module.exports = {
     renderer : renderer,
     mesh : mesh,
     geom : geom,
-    scene : sceneGraph
+    scene : sceneGraph,
+    utils : pglUtils
 };
