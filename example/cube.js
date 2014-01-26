@@ -45,29 +45,8 @@ plask.simpleWindow({
         });
 
         pgl.scene.addMesh( cube );
-
-        ///////////
         pgl.scene.addFloor();
-
-        var floor = new pgl.mesh({
-            geometry : new pgl.geom.planeGrid(),
-            scene : pgl.scene,
-            name : 'floor',
-            position: new plask.Vec3(0, 0, 0),
-            wireframe : true
-        });
-
-        pgl.scene.addMesh( floor );
-
-        var axes = new pgl.mesh({
-            geometry : new pgl.geom.axes(),
-            scene : pgl.scene,
-            name : 'axes',
-            position : new plask.Vec3(0, 0, 0),
-            wireframe : true
-        });
-
-        pgl.scene.addMesh( axes );
+        pgl.scene.addAxes();
 
         // var points = new pgl.mesh({
         //     geometry : new pgl.geom.points(),
