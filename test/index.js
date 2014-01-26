@@ -2,7 +2,7 @@
 var assert = require('assert');
 var pglUtils = require('../lib/pgl-utils.js');
 
-describe('Merge arguments passed in to a function with a defaults object', function() {
+describe('pglUtils.merge: Merge arguments passed in to a function with a defaults object', function() {
     var args = {
         text : 'overridden',
         arr : [1,2,3]
@@ -29,7 +29,7 @@ describe('Merge arguments passed in to a function with a defaults object', funct
     });
 });
 
-describe('Converting geo coordinates to Cartesian', function() {
+describe('pglUtils.geoCarte: Converting geo coordinates to Cartesian', function() {
     var geoCoords = [ [50.8429, 0.1313], [-20.5878, -174.8103], [50.8429, 0.1313] ];
 
     var cartCoords = [];
