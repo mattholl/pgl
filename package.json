@@ -7,10 +7,13 @@
     "webgl"
   ],
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mattholl/pgl.git"
+  "scripts": {
+    "test": "mocha -u bdd -R spec"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/mattholl/pgl.git"
   },
   "author": "Matt Hollings <matthew.hollings@gamil.com>",
-  "license": "BSD-2-Clause"
+  "license": "MIT"
 }

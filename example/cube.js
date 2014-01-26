@@ -16,12 +16,13 @@ plask.simpleWindow({
         this.framerate(60);
 
         var gl = this.gl;
+        var self = this;
 
         pgl.renderer.create({
             gl : gl,
             width : this.width,
             height : this.height,
-            shaderPath : __dirname + '/pgl-shaders',
+            shaderPath : __dirname + '/shaders',
             shaderName : 'flat-surface'
         });
 
@@ -44,34 +45,15 @@ plask.simpleWindow({
         });
 
         pgl.scene.addMesh( cube );
-
-        var floor = new pgl.mesh({
-            geometry : new pgl.geom.planeGrid(),
-            scene : pgl.scene,
-            name : 'floor',
-            position: new plask.Vec3(0, 0, 0),
-            wireframe : true
-        });
-
-        pgl.scene.addMesh( floor );
-
-        var axes = new pgl.mesh({
-            geometry : new pgl.geom.axes(),
-            scene : pgl.scene,
-            name : 'axes',
-            position : new plask.Vec3(0, 0, 0),
-            wireframe : true
-        });
-
-        pgl.scene.addMesh( axes );
+        pgl.scene.addFloor();
+        pgl.scene.addAxes();
 
         var points = new pgl.mesh({
             geometry : new pgl.geom.points(),
             scene : pgl.scene,
             name : 'points',
             position : new plask.Vec3(0, 0, 0),
-            pointMesh : true,
-            pointSize : 3
+            pointSize : 3.0
         });
 
         points.addPoint({
@@ -93,20 +75,12 @@ plask.simpleWindow({
             });
         }, 1000);
 
-        this.on('leftMouseDown', function(e) {
-            pgl.scene.handleMouse(e);
-        });
+        var mouseEvents = ['leftMouseDown', 'leftMouseUp', 'leftMouseDragged', 'scrollWheel'];
 
-        this.on('leftMouseUp', function(e) {
-            pgl.scene.handleMouse(e);
-        });
-
-        this.on('leftMouseDragged', function(e) {
-            pgl.scene.handleMouse(e);
-        });
-
-        this.on('scrollWheel', function(e) {
-            pgl.scene.handleMouse(e);
+        mouseEvents.forEach(function(mouseEvent) {
+            self.on(mouseEvent, function(e) {
+                pgl.scene.handleMouse(e);
+            });
         });
 
         this.on('keyUp', function(e) {
